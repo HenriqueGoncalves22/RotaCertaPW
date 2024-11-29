@@ -7,9 +7,10 @@ import org.springframework.cglib.core.Local;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
-@Table(name = "TBL_POST_USUARIO")
+@Table(name = "TBL_USUARIO")
 @Getter
 @Setter
 public class Usuario {
@@ -25,7 +26,7 @@ public class Usuario {
     private String nome;
 
     @Column(name = "DT_NASCIMENTO")
-    private LocalDateTime dataNascimento;
+    private LocalDate dataNascimento;
 
     @Column(name = "TX_TELEFONE")
     private String telefone;

@@ -12,8 +12,6 @@ public class RotaCertaApplication {
 		SpringApplication.run(RotaCertaApplication.class, args);
 	}
 
-	Double valorDespesa = 1500;
-	DecimalFormat df = new DecimalFormat("R$ #.##");
 
 
 }

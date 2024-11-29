@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -18,7 +19,7 @@ public class PostComunidade {
     private Long id;
 
     @Column(name = "DT_PUBLICACAO")
-    private LocalDateTime dataPublicacao;
+    private LocalDate dataPublicacao;
 
     @Column(name = "TX_TEXTO")
     private String texto;

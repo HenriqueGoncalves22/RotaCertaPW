@@ -4,11 +4,11 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.text.DecimalFormat;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+
 
 @Entity
-@Table(name = "TBL_POST_USUARIO")
+@Table(name = "TBL_DESPESA")
 @Getter
 @Setter
 public class Despesa {
@@ -17,14 +17,13 @@ public class Despesa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "VL_DESPESA")
+    @Column(name = "VL_DESPESA", columnDefinition = "decimal")
     private Double valorDespesa;
 
     @Column(name = "TX_TIPO_DESPESA")
     private TipoDespesaEnum tipoDespesa;
 
     @Column(name = "DT_DESPESA")
-    private LocalDateTime dataDespesa;
-
+    private LocalDate dataDespesa;
 
 }
