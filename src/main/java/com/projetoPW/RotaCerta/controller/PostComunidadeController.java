@@ -1,8 +1,6 @@
 package com.projetoPW.RotaCerta.controller;
 
-import com.projetoPW.RotaCerta.entity.Despesa;
 import com.projetoPW.RotaCerta.entity.PostComunidade;
-import com.projetoPW.RotaCerta.service.DespesaService;
 import com.projetoPW.RotaCerta.service.PostComunidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,7 +28,9 @@ public class PostComunidadeController {
 
     // Cadastrar um novo post
     @PostMapping
-    public PostComunidade cadastrar(@RequestBody PostComunidade post) {return service.criarPost(post);}
+    public PostComunidade cadastrar(@RequestBody PostComunidade post) {
+        return service.criarPost(post);
+    }
 
     // Alterar post
     @PutMapping("/{id}")
@@ -41,15 +41,22 @@ public class PostComunidadeController {
 
     // Excluir post por ID
     @DeleteMapping("/{id}")
-    public void excluir (@PathVariable Long id) {
+    public void excluir(@PathVariable Long id) {
         service.deletarPost(id);
     }
 
     // Denunciar post
     @DeleteMapping("/{id}")
-    public void denunciar (@RequestBody PostComunidade post, @PathVariable Long id) {
-        post.setDenuncias(1);
-        service.deletarPost(id);
+    public PostComunidade denunciar(@RequestBody PostComunidade post, @PathVariable Long id) {
+        post.setId(id);
+        return service.denunciarPost(id);
+    }
+
+    //CurtirPost
+    @PutMapping("/{id}")
+    public PostComunidade curtir (@RequestBody PostComunidade post, @PathVariable Long id) {
+        post.setId(id);
+        return service.curtirPost(post);
     }
 }
 

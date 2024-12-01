@@ -31,6 +31,9 @@ public class PostComunidade {
     @Column(name = "QT_DENUNCIAS")
     private int denuncias;
 
+    @Column(name = "QT_CURTIDAS")
+    private int curtidas;
+
     @ManyToOne
     @JoinColumn(name = "ID_USUARIO")
     private Usuario usuario;

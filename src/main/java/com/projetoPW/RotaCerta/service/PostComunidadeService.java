@@ -33,15 +33,21 @@ public class PostComunidadeService {
             repository.deleteById(id);
     }
 
-    public void denunciarPost(Long id) {
+    public PostComunidade denunciarPost(Long id) {
         PostComunidade post = buscaPorId(id);
         if (post != null) {
             post.setDenuncias(post.getDenuncias() + 1);
             System.out.println("Post denunciado. Total de denúncias: " + post.getDenuncias());
         }
-        if (post.getDenuncias() >= 3) {
+        if (post.getDenuncias() >= 5) {
             repository.deleteById(id);
-            System.out.println("Post excluído devido a 3 denúncias.");
+            System.out.println("Post excluído devido a 5 denúncias.");
         }
+        return repository.save(denunciarPost(id));
+    }
+    public PostComunidade curtirPost(PostComunidade post) {
+        post.setCurtidas(post.getCurtidas() + 1);
+        return repository.save(post);
     }
 }
+
