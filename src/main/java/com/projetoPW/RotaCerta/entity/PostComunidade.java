@@ -28,6 +28,9 @@ public class PostComunidade {
     @Column(name = "TX_TIPO_POST")
     private TipoPostEnum tipoPost;
 
+    @Column(name = "QT_DENUNCIAS")
+    private int denuncias;
+
     @ManyToOne
     @JoinColumn(name = "ID_USUARIO")
     private Usuario usuario;

@@ -1,7 +1,6 @@
 package com.projetoPW.RotaCerta.service;
 
 import com.projetoPW.RotaCerta.entity.Despesa;
-import com.projetoPW.RotaCerta.entity.TipoDespesaEnum;
 import com.projetoPW.RotaCerta.repository.DespesaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,15 +28,8 @@ public class DespesaService {
         return repository.save(despesa);
     }
 
-    public Despesa alterarDespesa (Despesa despesa)
-    {
-        var existe = buscaPorId(Despesa.());
-        if (existe != null)
-            return repository.save(despesa);
-        else
-            System.out.println("Despesa não encontrada");
-        return null;
-    }
+    public Despesa alterarDespesa (Despesa despesa){return repository.save(despesa);}
+
 
     public void removerDespesa (Long id)
     {

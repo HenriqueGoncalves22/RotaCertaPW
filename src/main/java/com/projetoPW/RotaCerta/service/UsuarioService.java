@@ -26,7 +26,7 @@ public class UsuarioService extends Usuario{
         }
 
         public Usuario cadastrar(Usuario usuario) {
-            var existeEmail = repository.findByEmail(usuario.get());
+            var existeEmail = repository.findByEmail(usuario.getEmail());
             var existeWhatsapp = repository.findByTelefone(usuario.getTelefone());
             if (existeWhatsapp == null || existeEmail == null) {
                 return repository.save(usuario);
@@ -37,25 +37,13 @@ public class UsuarioService extends Usuario{
             return null;
         }
 
-        public Usuario login(Usuario usuario){
+        public Usuario login(Usuario usuario){return repository.save(usuario);}
 
-        }
-
-        public Usuario alterar(Usuario usuario)
+        public void removerUsuario (Long id)
         {
-            var existe = buscaPorId(usuario.getId());
-            if (existe != null)
-                return repository.save(usuario);
-            else
-                System.out.println("Disciplina não encontrada");
-            return null;
-        }
-
-        public void excluir(Long id)
-        {
-            var existe = buscaPorId(id);
-            if(existe != null)
-                repository.deleteById(id);
+        var existe = buscaPorId(id);
+        if(existe != null)
+            repository.deleteById(id);
         }
     }
 
