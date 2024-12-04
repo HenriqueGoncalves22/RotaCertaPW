@@ -20,7 +20,7 @@ public class Usuario {
     private Long id;
 
     @Column(name = "TX_TEMPO_PAGAMENTO")
-    private String tempoPagamento;
+    private TempoPagamentoEnum tempoPagamento;
 
     @Column(name = "TX_NOME")
     private String nome;
