@@ -28,10 +28,10 @@ public class PostComunidade {
     @Column(name = "TX_TIPO_POST")
     private TipoPostEnum tipoPost;
 
-    @Column(name = "QT_DENUNCIAS")
+    @Column(name = "QTD_DENUNCIAS")
     private int denuncias;
 
-    @Column(name = "QT_CURTIDAS")
+    @Column(name = "QTD_CURTIDAS")
     private int curtidas;
 
     @ManyToOne

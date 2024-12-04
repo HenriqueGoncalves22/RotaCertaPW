@@ -20,10 +20,13 @@ public class Despesa {
     @Column(name = "VL_DESPESA", columnDefinition = "decimal")
     private Double valorDespesa;
 
-    //@Column(name = "TX_CATEGORIA")
-    //private Categoria categoria;
+    @Column(name = "TX_TIPO_DESPESA")
+    private String tipoDespesa;
 
     @Column(name = "DT_DESPESA")
     private LocalDate dataDespesa;
 
+    //@ManyToOne
+    //@JoinColumn(name = "ID_CATEGORIA")
+    //private Categoria categoria;
 }

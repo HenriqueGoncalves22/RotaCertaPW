@@ -28,7 +28,7 @@ public class Usuario {
     @Column(name = "DT_NASCIMENTO")
     private LocalDate dataNascimento;
 
-    @Column(name = "TX_TELEFONE")
+    @Column(name = "TELEFONE")
     private String telefone;
 
     @Column(name = "TX_EMAIL")

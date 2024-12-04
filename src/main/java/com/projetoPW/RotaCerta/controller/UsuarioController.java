@@ -1,8 +1,6 @@
 package com.projetoPW.RotaCerta.controller;
 
-import com.projetoPW.RotaCerta.entity.Despesa;
 import com.projetoPW.RotaCerta.entity.Usuario;
-import com.projetoPW.RotaCerta.service.DespesaService;
 import com.projetoPW.RotaCerta.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
